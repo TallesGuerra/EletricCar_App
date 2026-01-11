@@ -74,7 +74,7 @@
         android:id="@+id/tv_bateria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/batery"
+        android:text="@string/battery"
 
         app:layout_constraintStart_toStartOf="@+id/tv_preco"
         app:layout_constraintTop_toBottomOf="@+id/tv_preco" />

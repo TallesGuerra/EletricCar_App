@@ -4,6 +4,6 @@
     <string name="cars">Carros</string>
     <string name="favorite">Favoritos</string>
     <string name="price">Preço</string>
-    <string name="batery">Bateria</string>
+    <string name="battery">Bateria</string>
     <string name="power">Potência</string>
 </resources>
