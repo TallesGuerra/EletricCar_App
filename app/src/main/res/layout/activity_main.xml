@@ -42,7 +42,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="#dcd8d8"
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,9 +66,9 @@
                 android:id="@+id/tv_preco"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
                 android:text="@string/price"
-                android:textStyle="bold"
-                android:layout_marginRight="16dp"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_preco_value"
@@ -90,9 +89,9 @@
                 android:id="@+id/tv_bateria"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
                 android:text="@string/battery"
-                android:textStyle="bold"
-                android:layout_marginRight="16dp"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_bateria_value"
@@ -112,8 +111,8 @@
             <TextView
                 android:id="@+id/tv_potencia"
                 android:layout_width="60dp"
-                android:layout_marginRight="16dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
                 android:text="@string/power"
                 android:textStyle="bold" />
 
@@ -136,8 +135,8 @@
             <TextView
                 android:id="@+id/tv_recarga"
                 android:layout_width="60dp"
-                android:layout_marginRight="16dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
                 android:text="Recarga"
                 android:textStyle="bold" />
 
