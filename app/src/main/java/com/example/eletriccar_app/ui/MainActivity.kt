@@ -1,17 +1,19 @@
-package com.example.eletriccar_app.presentation
+package com.example.eletriccar_app.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.example.eletriccar_app.R
+import com.example.eletriccar_app.data.CarFactory
+import com.example.eletriccar_app.ui.adapter.CarAdapter
 
 class MainActivity : AppCompatActivity() {
     lateinit var btnAvancar: Button
-    lateinit var lista: ListView
+    lateinit var listaCarros: RecyclerView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,16 +26,14 @@ class MainActivity : AppCompatActivity() {
 
     fun setupView() {
         btnAvancar = findViewById(R.id.btn_avancar)
-        lista = findViewById(R.id.rv_car_list)
+        listaCarros = findViewById(R.id.rv_car_list)
 
     }
 
     fun setupList(){
-        val dados = arrayOf(
-            "Macarrão", "Arroz", "Feijão"
-        )
+       val adapter = CarAdapter(CarFactory.list)
+       listaCarros.adapter = adapter
 
-        lista.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dados)
     }
     private fun setupListeners() {
         btnAvancar.setOnClickListener {

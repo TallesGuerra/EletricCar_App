@@ -1,4 +1,4 @@
-package com.example.eletriccar_app.presentation
+package com.example.eletriccar_app.ui
 
 import android.os.Bundle
 import android.widget.Button
