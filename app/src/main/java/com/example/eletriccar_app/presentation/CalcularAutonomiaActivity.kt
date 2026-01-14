@@ -1,24 +1,22 @@
-package com.example.eletriccar_app
+package com.example.eletriccar_app.presentation
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.eletriccar_app.R
 
-
-class MainActivity : AppCompatActivity() {
+class CalcularAutonomiaActivity: AppCompatActivity() {
     lateinit var precoKwh: EditText
     lateinit var btnCalcular: Button
     lateinit var kmPercorrido: EditText
     lateinit var resultado: TextView
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_calcular_autonomia)
         setupView()
         setupListeners()
     }
@@ -28,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         btnCalcular = findViewById(R.id.btn_calcular)
         kmPercorrido = findViewById(R.id.edt_kmPercorrido)
         resultado = findViewById(R.id.tv_resultado)
+        btnCalcular = findViewById(R.id.btn_calcular)
 
     }
 
@@ -39,13 +38,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun calcular() {
-        val precoKwh_informado = precoKwh.text.toString().toFloat()
-        val kmPercorrido_informado = kmPercorrido.text.toString().toFloat()
+        val preco = precoKwh.text.toString().toFloat()
+        val km = kmPercorrido.text.toString().toFloat()
+        val result = preco / km
 
-        val resultadoConsumo: Float = precoKwh_informado / kmPercorrido_informado
-
-        resultado.text = resultadoConsumo.toString()
+        resultado.text = result.toString()
     }
+
+
+
+
 }
-
-

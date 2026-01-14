@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".presentation.CalcularAutonomiaActivity">
+
+    <!-- 1. TÍTULO QUE ESTAVA FALTANDO, AGORA ADICIONADO E CORRIGIDO -->
+    <!-- Ele fica ancorado no topo, início e fim da tela. -->
+    <TextView
+        android:id="@+id/tv_titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cálculo de Autonomia"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2. CAMPO DE PREÇO, AGORA ANCORADO ABAIXO DO TÍTULO -->
+    <EditText
+        android:id="@+id/edt_precoKwh"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:autofillHints="price"
+        android:hint="@string/kwh_price"
+        android:textColorHint="#546E7A"
+        android:inputType="numberDecimal"
+        android:maxLength="10"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo" /> <!-- Ancorado abaixo do título -->
+
+    <!-- 3. CAMPO DE KM, ANCORADO ABAIXO DO CAMPO DE PREÇO -->
+    <EditText
+        android:id="@+id/edt_kmPercorrido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autofillHints="distance"
+        android:hint="@string/km_covered"
+        android:inputType="numberDecimal"
+        android:maxLength="30"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_precoKwh" /> <!-- Ancorado abaixo do anterior -->
+
+    <!-- 4. BOTÃO, ANCORADO ABAIXO DO CAMPO DE KM -->
+    <Button
+        android:id="@+id/btn_calcular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/btn_calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_kmPercorrido" /> <!-- Ancorado abaixo do anterior -->
+
+    <!-- 5. RESULTADO, ANCORADO ABAIXO DO BOTÃO -->
+    <TextView
+        android:id="@+id/tv_resultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calcular"
+        tools:text="R$ 25,50" /> <!-- tools:text é para ver no preview, não aparece no app rodando -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

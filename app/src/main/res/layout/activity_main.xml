@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -35,137 +37,29 @@
         app:layout_constraintStart_toEndOf="@+id/tv_carros"
         app:layout_constraintTop_toTopOf="@+id/tv_carros" />
 
-    <ImageView android:id="@+id/iv_eletric_car"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_car_list"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:adjustViewBounds="true"
+        android:layout_marginBottom="16dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/btn_avancar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_carros"
-        app:srcCompat="@drawable/tesla" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_carros"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="layout/carro_item"
+                />
 
-    <TextView android:id="@+id/tv_preco"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/price"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_eletric_car" />
-
-    <TextView  android:id="@+id/tv_preco_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="100.000€"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_preco"
-        app:layout_constraintStart_toEndOf="@id/tv_preco" />
-
-    <TextView android:id="@+id/tv_bateria"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/battery"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_preco" />
-
-    <TextView android:id="@+id/tv_bateria_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="93,4 kWh"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_bateria"
-        app:layout_constraintStart_toEndOf="@id/tv_bateria" />
-
-    <TextView android:id="@+id/tv_potencia"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/power"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_bateria" />
-
-    <TextView android:id="@+id/tv_potencia_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="646cv"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_potencia"
-        app:layout_constraintStart_toEndOf="@id/tv_potencia" />
-
-    <TextView android:id="@+id/tv_recarga"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/recharge"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_potencia" />
-
-    <TextView android:id="@+id/tv_recarga_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="23 min"
-        app:layout_constraintBaseline_toBaselineOf="@id/tv_recarga"
-        app:layout_constraintStart_toEndOf="@id/tv_recarga" />
-
-    <EditText android:id="@+id/edt_precoKwh"
+    <Button
+        android:id="@+id/btn_avancar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-
-        android:hint="@string/kwh_price"
-        android:inputType="numberDecimal"
-
-        android:maxLength="10"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/tv_recarga"
-        app:layout_constraintTop_toBottomOf="@+id/tv_recarga" />
-
-    <EditText android:id="@+id/edt_kmPercorrido"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-
-
-        android:hint="@string/km_covered"
-        android:inputType="numberDecimal"
-
-        android:maxLength="30"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/edt_precoKwh"
-        app:layout_constraintTop_toBottomOf="@+id/edt_precoKwh" />
-
-    <Button android:id="@+id/btn_calcular"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-
-        android:text="@string/btn_calcular"
-        app:layout_constraintStart_toStartOf="@+id/edt_kmPercorrido"
-
-        app:layout_constraintTop_toBottomOf="@+id/edt_kmPercorrido" />
-
-    <TextView android:id="@+id/tv_resultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-
-        app:layout_constraintEnd_toEndOf="@+id/btn_calcular"
-        app:layout_constraintStart_toStartOf="@+id/btn_calcular"
-        app:layout_constraintTop_toBottomOf="@+id/btn_calcular"
-
-        android:textSize="18dp"
-        android:hint="Resultado preço Kwh / Km Percorrido"
-
-        />
-
-
-
-
+        android:text="Ir para a calculadora"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
