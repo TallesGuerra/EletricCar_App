@@ -11,6 +11,7 @@ class CarFragment: Fragment() {
     lateinit var fabCalcular : FloatingActionButton
     lateinit var listaCarros: RecyclerView
 
+    var carrosArray : ArrayList<Carros> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,10 +22,10 @@ class CarFragment: Fragment() {
 
      override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRetrofit()
+        callService()
         setupView(view)
         setupListeners()
-        setupList()
+       
     }
     
     fun setupView(view: View) {
@@ -38,23 +39,26 @@ class CarFragment: Fragment() {
     }
 
     fun setupList(){
-      val adapter = CarAdapter(CarFactory.list)
+      val adapter = CarAdapter(carrosArray)
        listaCarros.adapter = adapter
     }
 
      fun setupListeners() {
         fabCalcular.setOnClickListener {
-            MyTask().execute("https://github.com/igorbag/cars-api/blob/main/cars.json")
-            //startActivity(Intent(context, CalcularAutonomiaActivity::class.java))
+            startActivity(Intent(context, CalcularAutonomiaActivity::class.java))
+             }
         }
+
+      fun callService(){
+        val urlBase = "https://github.com/igorbag/cars-api/blob/main/cars.json"
+         MyTask().execute(urlBase)
+      }  
     }
 
     inner class GetCarInfomations : AsyncTask<String, String, String>{
-
         override fun preExecute(){
             Log.d("MyTask", "Iniciando...")
         }
-
 
         override fun doInBackground(vararg url: String?): String {
             var urlConnection : HttpUrlConnection? = null
@@ -65,9 +69,19 @@ class CarFragment: Fragment() {
                 urlConnection = urlBase.openConnection() as HttpUrlConnection
                 urlConnection.connetTimeout = 60000
                 urlConnection.readTimeout = 60000
+                 urlConnection.setRequestProperty(
+                    "Accept",
+                    "application/json"
+                )
 
-                var inString = urlConnection.inputStream.bufferReader().use{it. readText}
+                val responseCode = urlConnection.responseCode
+                
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                var response = urlConnection.inputStream.bufferReader().use{it. readText}
                 publishProgress(inString)
+                }else{
+                    Log.e("Error", "Serviço indisponivel no momento.")
+                }
             } catch(ex: Exception){
                 Log.e("Error", "Erro ao realizar processamento")
             } finally{
@@ -100,7 +114,7 @@ class CarFragment: Fragment() {
                     val urlPhoto = jsonArray.getJSONObject(i).getString("urlPhoto")
                     Log.d("urlPhoto ->", urlPhoto)
 
-                    al model = Carro(
+                    val model = Carro(
                         id = id.toInt(),
                         preco = preco,
                         bateria = bateria,
@@ -111,39 +125,12 @@ class CarFragment: Fragment() {
                     )
                     carrosArray.add(model)
                 }
-
-
-              }
+                setupList()
 
             }catch(ex: Exception) {
                 Log.e("Erro ->", ex.message.toString())
             }
-        }
-
-
-        fun streamToString(inputStream: InputStream): String{
-            val bufferReader = Bufferreader(InputStreamReader(inputStream))
-
-            var line: String
-            var result = ""
-
-            try{
-                do{
-                    line = bufferReader.readLine()
-                    line?.let{
-                        result += line
-                    }
-                } while (line != null){
-
-                } catch (ex: Exception){
-                    Log.e("Error", "Erro na Stream")
-                }
-
-                return result
-            }
-        }
-        
+           
+        }     
     }
-
-}
 }
