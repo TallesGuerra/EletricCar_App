@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.eletriccar_app.R
 
 class CarFragment: Fragment() {
-    lateinit var : FloatingActionButton
+    lateinit var fabCalcular : FloatingActionButton
     lateinit var listaCarros: RecyclerView
 
 
