@@ -10,7 +10,6 @@
     android:padding="16dp">
 
 
-
     <TextView android:id="@+id/tv_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,62 +22,40 @@
 
     //TAB LAYOUT
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layoutr"
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
-
         >
+    //TAB ITEM
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cars"
+                >
+            </com.google.android.material.tabs.TabItem>
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/cars"
-            >
-        </com.google.android.material.tabs.TabItem>
 
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/favorite">
-        </com.google.android.material.tabs.TabItem>
-
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/favorite">
+            </com.google.android.material.tabs.TabItem>
     </com.google.android.material.tabs.TabLayout>
 
-    //RECYCLER VIEW
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_car_list"
+    
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_view_pager"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tab_layoutr"
-        app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/activity_carro_item"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        />
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_calculate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/blue"
-        android:src="@drawable/ic_iconCalculadora"
-        />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
 
 
 
