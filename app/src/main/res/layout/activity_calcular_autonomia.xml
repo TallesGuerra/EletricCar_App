@@ -7,11 +7,22 @@
     android:padding="16dp"
     tools:context=".ui.CalcularAutonomiaActivity">
 
-    <!-- 1. TÍTULO QUE ESTAVA FALTANDO, AGORA ADICIONADO E CORRIGIDO -->
-    <!-- Ele fica ancorado no topo, início e fim da tela. -->
+
+    <ImageView
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+        />
+
+
     <TextView
         android:id="@+id/tv_titulo"
-        android:layout_width="0dp"
+        android:layout_width="349dp"
         android:layout_height="wrap_content"
         android:text="Cálculo de Autonomia"
         android:textAlignment="center"
@@ -19,7 +30,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_close" />
 
     <!-- 2. CAMPO DE PREÇO, AGORA ANCORADO ABAIXO DO TÍTULO -->
     <EditText

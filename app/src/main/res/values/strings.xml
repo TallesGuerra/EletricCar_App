@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">EletricCar_App</string>
     <string name="title">Eletric Car</string>
-    <string name="cars">Carros</string>
-    <string name="favorite">Favoritos</string>
+    <string name="cars">CARROS</string>
+    <string name="favorite">FAVORITOS</string>
     <string name="price">Preço</string>
     <string name="battery">Bateria</string>
     <string name="power">Potência</string>

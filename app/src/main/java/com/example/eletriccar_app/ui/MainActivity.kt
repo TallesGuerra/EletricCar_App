@@ -2,16 +2,16 @@ package com.example.eletriccar_app.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eletriccar_app.R
 import com.example.eletriccar_app.data.CarFactory
 import com.example.eletriccar_app.ui.adapter.CarAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
-    lateinit var btnAvancar: Button
+    lateinit var btn_calculate: FloatingActionButton
     lateinit var listaCarros: RecyclerView
 
 
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupView() {
-        btnAvancar = findViewById(R.id.btn_avancar)
+        btn_calculate = findViewById(R.id.btn_calculate)
         listaCarros = findViewById(R.id.rv_car_list)
 
     }
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun setupListeners() {
-        btnAvancar.setOnClickListener {
+        btn_calculate.setOnClickListener {
           startActivity(Intent(this, CalcularAutonomiaActivity::class.java))
         }
     }
