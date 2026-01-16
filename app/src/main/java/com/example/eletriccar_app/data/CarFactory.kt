@@ -3,6 +3,7 @@ package com.example.eletriccar_app.data
 import com.example.eletriccar_app.domain.Carro
 
 object CarFactory {
+
     val list = listOf(
         Carro(
             id = 1,
@@ -24,3 +25,13 @@ object CarFactory {
         )
     )
 }
+
+/* VERBOS HTTP
+GET - Recuperar informaçoes
+Post - Para enviar informaçoes para um servidor
+Delete - Para deletar algum recurso
+Put - Para altera uma entidade como um todo
+Path - Para alerar um atributo da entidade
+
+
+ */
