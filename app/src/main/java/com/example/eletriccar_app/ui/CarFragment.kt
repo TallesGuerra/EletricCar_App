@@ -40,16 +40,17 @@ class CarFragment: Fragment() {
     fun setupList(){
       val adapter = CarAdapter(CarFactory.list)
        listaCarros.adapter = adapter
-
     }
 
      fun setupListeners() {
         fabCalcular.setOnClickListener {
-            startActivity(Intent(context, CalcularAutonomiaActivity::class.java))
+            MyTask().execute("https://github.com/igorbag/cars-api/blob/main/cars.json")
+            //startActivity(Intent(context, CalcularAutonomiaActivity::class.java))
         }
     }
 
     inner class GetCarInfomations : AsyncTask<String, String, String>{
+
         override fun preExecute(){
             Log.d("MyTask", "Iniciando...")
         }
@@ -65,7 +66,7 @@ class CarFragment: Fragment() {
                 urlConnection.connetTimeout = 60000
                 urlConnection.readTimeout = 60000
 
-                var String = streamToString(urlConnection.inputStream)
+                var inString = urlConnection.inputStream.bufferReader().use{it. readText}
                 publishProgress(inString)
             } catch(ex: Exception){
                 Log.e("Error", "Erro ao realizar processamento")
@@ -78,15 +79,44 @@ class CarFragment: Fragment() {
 
         override fun onProgressUpdate(vararg values: String=?){
             try {
-                var json : JSONObject
-              values[0]?.let{
-                 json = JSONObject(it)
-              }
+              val jsonArray = JSONTokener(values[0]).nextValue() as jsonArray
               
-                             
-            }
-            catch(ex: Exception) {
-                
+              for (i in 0 until jsonArray.lenght()){
+                 val id = jsonArray.getJSONObject(i).getString("id")
+                    Log.d("ID ->", id)
+
+                    val preco = jsonArray.getJSONObject(i).getString("preco")
+                    Log.d("Preco ->", preco)
+
+                    val bateria = jsonArray.getJSONObject(i).getString("bateria")
+                    Log.d("Bateria ->", bateria)
+
+                    val potencia = jsonArray.getJSONObject(i).getString("potencia")
+                    Log.d("Potencia ->", potencia)
+
+                    val recarga = jsonArray.getJSONObject(i).getString("recarga")
+                    Log.d("Recarga ->", recarga)
+
+                    val urlPhoto = jsonArray.getJSONObject(i).getString("urlPhoto")
+                    Log.d("urlPhoto ->", urlPhoto)
+
+                    al model = Carro(
+                        id = id.toInt(),
+                        preco = preco,
+                        bateria = bateria,
+                        potencia = potencia,
+                        recarga = recarga,
+                        urlPhoto = urlPhoto,
+                        isFavorite = false 
+                    )
+                    carrosArray.add(model)
+                }
+
+
+              }
+
+            }catch(ex: Exception) {
+                Log.e("Erro ->", ex.message.toString())
             }
         }
 
