@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,8 +16,6 @@
         android:src="@drawable/ic_close"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
-
         />
 
 
@@ -39,14 +38,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:autofillHints="price"
-        android:hint="@string/kwh_price"
+        android:hint="@string/preco_kwh"
         android:textColorHint="#546E7A"
         android:inputType="numberDecimal"
         android:maxLength="10"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titulo" /> <!-- Ancorado abaixo do título -->
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
 
     <!-- 3. CAMPO DE KM, ANCORADO ABAIXO DO CAMPO DE PREÇO -->
     <EditText
@@ -55,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:autofillHints="distance"
-        android:hint="@string/km_covered"
+        android:hint="@string/km_percorrido"
         android:inputType="numberDecimal"
         android:maxLength="30"
         android:minHeight="48dp"
@@ -70,7 +69,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/btn_calcular"
+        android:text="@string/calcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_kmPercorrido" /> <!-- Ancorado abaixo do anterior -->

@@ -8,30 +8,20 @@ object CarFactory {
         Carro(
             id = 1,
             preco = "R$ 300.000,00",
-            bateria = "100Kwh",
+            bateria = "100kWh",
             potencia = "200cv",
             recarga = "30min",
-            urlPhoto = "www.google.com"
-
+            urlPhoto = "www.google.com.br",
+            isFavorite = false
         ),
         Carro(
             id = 2,
             preco = "R$ 500.000,00",
-            bateria = "500Kwh",
+            bateria = "500kWh",
             potencia = "200cv",
             recarga = "50min",
-            urlPhoto = "www.google.com"
-
+            urlPhoto = "www.google.com",
+            isFavorite = false
         )
     )
 }
-
-/* VERBOS HTTP
-GET - Recuperar informaçoes
-Post - Para enviar informaçoes para um servidor
-Delete - Para deletar algum recurso
-Put - Para altera uma entidade como um todo
-Path - Para alerar um atributo da entidade
-
-
- */

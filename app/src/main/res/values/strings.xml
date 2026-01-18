@@ -6,8 +6,11 @@
     <string name="price">Preço</string>
     <string name="battery">Bateria</string>
     <string name="power">Potência</string>
-    <string name="recharge">Recarga</string>
-    <string name="kwh_price">Preço Kwh</string>
-    <string name="km_covered">Km Percorrido</string>
-    <string name="btn_calcular">Calcular</string>
+    <string name="recarga">Recarga</string>
+    <string name="preco_kwh">Preço Kwh</string>
+    <string name="km_percorrido">Km Percorrido</string>
+    <string name="calcular">CALCULAR</string>
+    <string name="no_wifi">Ops, internet não disponivel ):</string>
+    <string name="response_error">Algo deu errado, por favor tente novamente mais tarde.</string>
+
 </resources>
