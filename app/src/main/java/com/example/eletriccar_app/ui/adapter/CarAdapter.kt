@@ -3,15 +3,18 @@ package com.example.eletriccar_app.ui.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eletriccar_app.R
 import com.example.eletriccar_app.domain.Carro
 
-class CarAdapter(private val carros: List<Carro>) : 
-    ecyclerView.Adapter<CarAdapter.ViewHolder>() {
 
-    var carItemLiter : (Carro) -> Unit = {}
+
+class CarAdapter(private val carros: List<Carro>) :
+    RecyclerView.Adapter<CarAdapter.ViewHolder>() {
+
+    var carItemLister: (Carro) -> Unit = {}
     
     
     // Cria uma nova view para cada item da lista
@@ -26,10 +29,12 @@ class CarAdapter(private val carros: List<Carro>) :
         holder.bateria.text = carros[position].bateria
         holder.potencia.text = carros[position].potencia
         holder.recarga.text = carros[position].recarga
-        holfr.favorite.setOnclickListener{
+
+
+        holder.favorito.setOnClickListener {
             val carro = carros[position]
-            carItemLiter(carro)
-            setupFavorite(carro, holder)                
+            carItemLister(carro)
+            setupFavorite(carro, holder)
         }
     }
 

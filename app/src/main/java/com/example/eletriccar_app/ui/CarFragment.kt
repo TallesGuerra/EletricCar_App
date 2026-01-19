@@ -61,10 +61,9 @@ class CarFragment : Fragment() {
     }
 
     override  fun onResume() {
-        if(checkForInternet(context).toString() == "true") {
-            getAllCars()
-            // callService() -> esse é outra forma de chamar o serviço.
-        } else{
+        super.onResume()
+        if (checkForInternet(context)) {getAllCars()
+        } else {
             emptyState()
         }
     }
@@ -123,11 +122,12 @@ class CarFragment : Fragment() {
             isVisible = true
             adapter = carroAdapter
         }
-        carroAdapter.carroItemLister = {carro -> 
+
+        carroAdapter.carItemLister = {carro ->
             val bateria = carro.bateria
         }
 
-        /* val adapter = CarAdapter(carrosArray, isFavoriteScreen = false) // Adicionei o parâmetro que faltava
+        /* val adapter = CarAdapter(carrosArray, isFavoriteScreen = false)
         listaCarros.adapter = adapter*/
     }
 
@@ -144,25 +144,18 @@ class CarFragment : Fragment() {
     }
 
 
-    fun checkForInternet(context: Context?): Any {
-        val connectivityManager =
-            context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    fun checkForInternet(context: Context?): Boolean {
+        val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager ?: return false
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             val network = connectivityManager.activeNetwork ?: return false
-
-            val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
-
-            return when {
-                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
-                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
-                else -> false
-            }
+            val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+            return capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) || capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
         } else {
             @Suppress("DEPRECATION")
-            val networkInfo = connectivityManager.activeNetwork ?: return false
+            val networkInfo = connectivityManager.activeNetworkInfo ?: return false
             @Suppress("DEPRECATION")
-            return networkInfo.networkHandle
+            return networkInfo.isConnected
         }
     }
 

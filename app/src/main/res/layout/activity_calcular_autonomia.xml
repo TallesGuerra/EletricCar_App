@@ -76,7 +76,7 @@
 
     <!-- 5. RESULTADO, ANCORADO ABAIXO DO BOTÃO -->
     <TextView
-        style="@style/TextAppearence.MaterialComponents.HeadLine6"
+       style="@style/TextAppearance.MaterialComponents.Headline5"
         android:id="@+id/tv_resultado"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
