@@ -53,6 +53,23 @@
      />
     //tools:visibility="visible"
 
+    <ImageView 
+        android:id="@+id/iv_favorite"
+
+        android:src="@drawable/ic_star"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="16dp"
+        
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+    />
+
+
     <ImageView
         android:id="@+id/iv_empty_state"
 

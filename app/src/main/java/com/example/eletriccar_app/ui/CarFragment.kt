@@ -123,6 +123,9 @@ class CarFragment : Fragment() {
             isVisible = true
             adapter = carroAdapter
         }
+        carroAdapter.carroItemLister = {carro -> 
+            val bateria = carro.bateria
+        }
 
         /* val adapter = CarAdapter(carrosArray, isFavoriteScreen = false) // Adicionei o parâmetro que faltava
         listaCarros.adapter = adapter*/
@@ -197,7 +200,6 @@ class CarFragment : Fragment() {
             }
             return ""
         }
-
 
         override fun onProgressUpdate(vararg values: String?) {
             try {
