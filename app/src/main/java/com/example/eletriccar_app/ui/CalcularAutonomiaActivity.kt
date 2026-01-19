@@ -13,9 +13,7 @@ class CalcularAutonomiaActivity: AppCompatActivity() {
     lateinit var btnCalcular: Button
     lateinit var kmPercorrido: EditText
     lateinit var resultado: TextView
-
     lateinit var btnClose: ImageView
-
 
 
     override fun onCreate(savedInstanceState: Bundle?){
@@ -23,6 +21,15 @@ class CalcularAutonomiaActivity: AppCompatActivity() {
         setContentView(R.layout.activity_calcular_autonomia)
         setupView()
         setupListeners()
+
+
+         // refatorar e transforma em setupCachedResult()
+        private fun setupCachedResult(){
+            val valorCalculado = getSharedPref()
+            resultado.text = valorCalculado.toString()
+        }
+       
+        
     }
 
     fun setupView() {
@@ -51,7 +58,21 @@ class CalcularAutonomiaActivity: AppCompatActivity() {
         val result = preco / km
 
         resultado.text = result.toString()
+        saveSharedPref(result)
     }
 
+    fun saveSharedPref(resultado : Float){
+        val sharedPref = getPreferencs(Context.MODE_PRIVATE) ?: return
+        with(sharedPref.edit()){
+            putFloat(getString(R.string.saved_calc), resultado)
+            apply()
+        }
+    }
+
+    fun getSharedPref(): Float{
+        val sharedPref = getPreferencs(Context.MODE_PRIVATE)
+        return sharedPref.getFloat(getString(R.string.saved_calc), 0.0f)
+         
+    }
 
 }

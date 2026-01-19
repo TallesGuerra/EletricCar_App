@@ -76,13 +76,15 @@
 
     <!-- 5. RESULTADO, ANCORADO ABAIXO DO BOTÃO -->
     <TextView
+        style="@style/TextAppearence.MaterialComponents.HeadLine6"
         android:id="@+id/tv_resultado"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:textSize="24sp"       
+        
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_calcular"
