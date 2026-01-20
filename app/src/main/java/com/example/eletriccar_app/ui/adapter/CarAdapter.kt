@@ -11,7 +11,7 @@ import com.example.eletriccar_app.domain.Carro
 
 
 
-class CarAdapter(private val carros: List<Carro>) :
+class CarAdapter(private val carros: List<Carro>, private val isFavoriteScreen : Boolean = false) :
     RecyclerView.Adapter<CarAdapter.ViewHolder>() {
 
     var carItemLister: (Carro) -> Unit = {}
@@ -29,7 +29,10 @@ class CarAdapter(private val carros: List<Carro>) :
         holder.bateria.text = carros[position].bateria
         holder.potencia.text = carros[position].potencia
         holder.recarga.text = carros[position].recarga
-
+        
+         if(isFavoriteScreen){
+            holder.favorito.setImageResource(R.drawable.ic_star_selected)
+        }
 
         holder.favorito.setOnClickListener {
             val carro = carros[position]
@@ -42,12 +45,12 @@ class CarAdapter(private val carros: List<Carro>) :
         carro: Carro,
         holder: ViewHolder
     ){
-         carro.isFavorite = !carro.isFavorite
-
+            carro.isFavorite = !carro.isFavorite
             if(carro.isFavorite)
                 holder.favorito.setImageResource(R.drawable.ic_star_selected)
             else
-                holder.favorito.setImageResource(R.drawable.ic_star)       
+                holder.favorito.setImageResource(R.drawable.ic_star)  
+                      
     }
 
 
