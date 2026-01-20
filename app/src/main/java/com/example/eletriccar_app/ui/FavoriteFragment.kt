@@ -7,7 +7,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.eletriccar_app.R
 
+import androidx.recyclerview.widget.RecyclerView
+import com.example.eletriccar_app.data.local.CarRepository
+import com.example.eletriccar_app.domain.Carro
+import com.example.eletriccar_app.ui.adapter.CarAdapter
+
 class FavoriteFragment: Fragment() {
+
+    lateinit var listaCarrosFavoritos: RecyclerView
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -16,4 +24,36 @@ class FavoriteFragment: Fragment() {
         return inflater.inflate(R.layout.favorite_fragment, container, false)
 
     }
+
+   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupView(view)
+        setupList()
+        
+    }
+
+    private fun getCarsOnLocalDb(): List<Carro> {
+        val repository = CarRepository(requireContext())
+        val carList = repository.getAll()
+        return carList
+
+        fun setupView(view: View) {
+            view.apply {
+                listaCarrosFavoritos = findViewById(R.id.rv_lista_carros_favoritos)
+            }
+    }
+        fun setupList() {
+                val cars = getCarsOnLocalDb()
+                val carroAdapter = CarAdapter(cars, isFavoriteScreen = true)
+                listaCarrosFavoritos.apply {
+                    isVisible = true
+                    adapter = carroAdapter
+                }
+
+           carroAdapter.carItemLister = { carro ->
+            // @TODO IMPLEMENTAR O DELETE NO BANCO DE DADOS
+        }  
+    }
+
+
 }
