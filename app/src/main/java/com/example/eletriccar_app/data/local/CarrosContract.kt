@@ -15,4 +15,15 @@ object CarrosContract {
 
     }
 
+    const val TABLE_CAR =
+        "CREATE TABLE${CarEntry.TABLE_NAME} ("+ 
+         "${BaseColumns.ID} INTEGER PRIMARY KEY," +
+         "${CarEntry.COLUMN_NAME_PRECO} TEXT," +
+         "${CarEntry.COLUMN_NAME_BATERIA} TEXT," +
+         "${CarEntry.COLUMN_NAME_POTENCIA} TEXT," +
+         "${CarEntry.COLUMN_NAME_RECARGA} TEXT," +
+         "${CarEntry.COLUMN_NAME_URL_PHOTO} TEXT)"
+         
+    const val SQL_DELETE_ENTRYS = 
+        "DROP TABLE IF EXISTS ${CarEntry.TABLE_NAME}"
 }
