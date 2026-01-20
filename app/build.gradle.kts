@@ -5,9 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.eletriccar_app"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36 // A more standard way to define this
 
     defaultConfig {
         applicationId = "com.example.eletriccar_app"
@@ -35,20 +33,4 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-}
-
-dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-
-    // Retrofit (HTTP Client): https://square.github.io/retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }
