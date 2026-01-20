@@ -3,12 +3,10 @@ package com.example.eletriccar_app.data.local
 import android.provider.BaseColumns
 
 object CarrosContract {
-    const val DATABASE_NAME = "db_car"
 
     object CarEntry : BaseColumns {
-        const val TABLE_NAME = "carros"
-
-        const val COLUMN_NAME_CAR_ID = "id"
+        const val TABLE_NAME = "car"
+        const val COLUMN_NAME_CAR_ID = "car_id"
         const val COLUMN_NAME_PRECO = "preco"
         const val COLUMN_NAME_BATERIA = "bateria"
         const val COLUMN_NAME_POTENCIA = "potencia"
@@ -19,8 +17,8 @@ object CarrosContract {
 
     const val TABLE_CAR =
         "CREATE TABLE${CarEntry.TABLE_NAME} ("+ 
-         "${BaseColumns.ID} INTEGER PRIMARY KEY," +
-         "${CarEntry.COLUMN_CAR_ID} TEXT," +
+         "${BaseColumns._ID} INTEGER PRIMARY KEY," +
+         "${CarEntry.COLUMN_NAME_CAR_ID} TEXT," +
          "${CarEntry.COLUMN_NAME_PRECO} TEXT," +
          "${CarEntry.COLUMN_NAME_BATERIA} TEXT," +
          "${CarEntry.COLUMN_NAME_POTENCIA} TEXT," +

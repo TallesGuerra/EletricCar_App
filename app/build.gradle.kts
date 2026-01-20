@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.eletriccar_app"
-    compileSdk = 36 // A more standard way to define this
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.eletriccar_app"
@@ -20,10 +20,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+           proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
@@ -34,3 +31,21 @@ android {
         jvmTarget = "11"
     }
 }
+
+
+dependencies {
+
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.fragment.ktx)
+
+    // Dependências do Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+
+     implementation("androidx.core:core-ktx:1.13.1")
+     implementation("androidx.appcompat:appcompat:1.7.0")
+     implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+}
+

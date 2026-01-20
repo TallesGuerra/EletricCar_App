@@ -8,6 +8,5 @@ data class Carro(
     val recarga: String,
     val urlPhoto: String,
     var isFavorite:Boolean
-    
 
 )
