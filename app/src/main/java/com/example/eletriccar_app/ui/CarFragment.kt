@@ -124,11 +124,8 @@ class CarFragment : Fragment() {
         }
 
         carroAdapter.carItemLister = {carro ->
-            val bateria = carro.bateria
-        }
-
-        /* val adapter = CarAdapter(carrosArray, isFavoriteScreen = false)
-        listaCarros.adapter = adapter*/
+           val isSaved = CarRepository(requireContext()).save(carro)
+        }        
     }
 
     fun setupListeners() {
@@ -236,4 +233,5 @@ class CarFragment : Fragment() {
             }
         }
     }
+
 }

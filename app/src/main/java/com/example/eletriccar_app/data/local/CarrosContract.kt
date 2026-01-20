@@ -3,6 +3,8 @@ package com.example.eletriccar_app.data.local
 import android.provider.BaseColumns
 
 object CarrosContract {
+    const val DATABASE_NAME = "db_car"
+
     object CarEntry : BaseColumns {
         const val TABLE_NAME = "carros"
 
@@ -24,6 +26,6 @@ object CarrosContract {
          "${CarEntry.COLUMN_NAME_RECARGA} TEXT," +
          "${CarEntry.COLUMN_NAME_URL_PHOTO} TEXT)"
          
-    const val SQL_DELETE_ENTRYS = 
+    const val SQL_DELETE_ENTRIES = 
         "DROP TABLE IF EXISTS ${CarEntry.TABLE_NAME}"
 }
