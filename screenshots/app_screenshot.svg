@@ -1,110 +1,108 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 720" width="360" height="720">
-<defs>
-  <symbol id="car" viewBox="0 0 250 100" preserveAspectRatio="xMidYMax meet">
-    <ellipse cx="125" cy="95" rx="103" ry="5" fill="#B8B8B8" opacity="0.35"/>
-    <path fill-rule="evenodd" fill="#D0D0D0" d="
-      M12,80 L8,71 C6,64 9,53 16,48 L24,41 C37,31 60,20 80,15 L94,10 L104,6 L162,6 L186,10
-      C197,16 211,31 215,45 L217,55 C221,65 227,75 231,81 L231,87 L12,87 Z
-      M91,87 A21,21 0 1 0 49,87 A21,21 0 1 0 91,87 Z
-      M217,87 A21,21 0 1 0 175,87 A21,21 0 1 0 217,87 Z
-    "/>
-    <path d="M32,83 L226,83 L226,87 L32,87 Z" fill="#B8B8B8"/>
-    <path d="M95,11 L105,6 L130,6 L130,44 L95,43 Z" fill="#8AADB8" opacity="0.82"/>
-    <path d="M134,6 L162,6 L186,10 C196,16 209,31 212,43 L134,43 Z" fill="#8AADB8" opacity="0.82"/>
-    <rect x="130" y="6" width="4" height="37" fill="#C8C8C8"/>
-    <line x1="95" y1="44" x2="95" y2="83" stroke="#C0C0C0" stroke-width="0.8"/>
-    <circle cx="70" cy="87" r="20" fill="#333"/>
-    <circle cx="70" cy="87" r="12" fill="#6E6E6E"/>
-    <circle cx="70" cy="87" r="4.5" fill="#444"/>
-    <circle cx="196" cy="87" r="20" fill="#333"/>
-    <circle cx="196" cy="87" r="12" fill="#6E6E6E"/>
-    <circle cx="196" cy="87" r="4.5" fill="#444"/>
-    <path d="M14,54 L14,67 C17,70 22,70 23,67 L23,54 C20,51 17,51 14,54 Z" fill="#E8E2BE" opacity="0.75"/>
-    <rect x="220" y="51" width="9" height="16" rx="2" fill="#C06060" opacity="0.7"/>
-  </symbol>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 430">
+  <defs>
+    <clipPath id="screen">
+      <rect x="10" y="10" width="180" height="410" rx="20"/>
+    </clipPath>
+    <symbol id="car" viewBox="0 0 120 50">
+      <ellipse cx="60" cy="47" rx="52" ry="3.5" fill="#C0C0C0" opacity="0.35"/>
+      <path d="M4,28 C2,24 2,16 10,12 L18,8 C28,3 42,0 56,0 L92,0 C104,0 110,6 112,16 C114,22 116,26 116,28 L4,28 Z" fill="#D0D0D0"/>
+      <path d="M55,0 L82,0 L82,22 L52,22 Z" fill="#8AADB8" opacity="0.82"/>
+      <path d="M84,0 L92,0 C104,0 110,6 112,16 L112,22 L84,22 Z" fill="#8AADB8" opacity="0.82"/>
+      <rect x="82" y="0" width="2" height="22" fill="#C2C2C2"/>
+      <rect x="10" y="24" width="106" height="4" rx="1" fill="#BBBBBB"/>
+      <circle cx="24" cy="40" r="9" fill="#2E2E2E"/>
+      <circle cx="24" cy="40" r="5.5" fill="#666"/>
+      <circle cx="24" cy="40" r="2" fill="#3A3A3A"/>
+      <circle cx="96" cy="40" r="9" fill="#2E2E2E"/>
+      <circle cx="96" cy="40" r="5.5" fill="#666"/>
+      <circle cx="96" cy="40" r="2" fill="#3A3A3A"/>
+      <rect x="6" y="15" width="6" height="5" rx="1.5" fill="#EEEAC0" opacity="0.8"/>
+      <rect x="110" y="15" width="5" height="9" rx="1.5" fill="#C06060" opacity="0.7"/>
+    </symbol>
+  </defs>
 
-<!-- Background -->
-<rect width="360" height="720" fill="#FFF"/>
+  <!-- Phone shell -->
+  <rect x="2" y="2" width="196" height="426" rx="28" fill="#1a1a1a"/>
+  <!-- Buttons -->
+  <rect x="0" y="82" width="2" height="18" rx="1" fill="#2e2e2e"/>
+  <rect x="0" y="106" width="2" height="30" rx="1" fill="#2e2e2e"/>
+  <rect x="198" y="100" width="2" height="30" rx="1" fill="#2e2e2e"/>
 
-<!-- STATUS BAR -->
-<text x="16" y="21" font-size="12.5" font-weight="600" fill="#000" font-family="sans-serif">12:01</text>
-<circle cx="290" cy="22" r="1.7" fill="#000"/>
-<path d="M286,18.5 Q290,14 294,18.5" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M282.5,15 Q290,8.5 297.5,15" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
-<rect x="302" y="15" width="3" height="7" rx="0.5" fill="#000"/>
-<rect x="307" y="12" width="3" height="10" rx="0.5" fill="#000"/>
-<rect x="312" y="9" width="3" height="13" rx="0.5" fill="#000"/>
-<rect x="320" y="9" width="23" height="12" rx="2.5" fill="none" stroke="#000" stroke-width="1.5"/>
-<rect x="343" y="12.5" width="3" height="5" rx="1" fill="#000"/>
-<rect x="321.5" y="10.5" width="20" height="9" rx="1.5" fill="#000"/>
+  <!-- Screen -->
+  <rect x="10" y="10" width="180" height="410" rx="20" fill="#FAFAFA"/>
 
-<!-- APP BAR -->
-<text x="20" y="67" font-size="22" font-weight="400" fill="#1A1A1A" font-family="sans-serif">Eletric Car</text>
+  <g clip-path="url(#screen)">
+    <!-- Dynamic island -->
+    <rect x="74" y="15" width="52" height="12" rx="6" fill="#1a1a1a"/>
 
-<!-- TAB BAR -->
-<text x="90" y="110" font-size="13" font-weight="700" fill="#00796B" text-anchor="middle" letter-spacing="1.2" font-family="sans-serif">CARROS</text>
-<rect x="20" y="117" width="140" height="2.5" rx="1.2" fill="#00796B"/>
-<text x="272" y="110" font-size="13" font-weight="700" fill="#9E9E9E" text-anchor="middle" letter-spacing="1.2" font-family="sans-serif">FAVORITOS</text>
-<line x1="0" y1="120" x2="360" y2="120" stroke="#E0E0E0" stroke-width="0.8"/>
+    <!-- STATUS BAR -->
+    <text x="22" y="33" font-family="sans-serif" font-size="7.5" font-weight="600" fill="#333">12:01</text>
+    <circle cx="136" cy="32" r="1.2" fill="#444"/>
+    <path d="M132,29 Q136,25 140,29" fill="none" stroke="#444" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M129,26.5 Q136,21 143,26.5" fill="none" stroke="#444" stroke-width="1.2" stroke-linecap="round"/>
+    <rect x="147" y="28" width="2" height="5" rx="0.5" fill="#444"/>
+    <rect x="151" y="26" width="2" height="7" rx="0.5" fill="#444"/>
+    <rect x="155" y="24" width="2" height="9" rx="0.5" fill="#444"/>
+    <rect x="161" y="24" width="16" height="9" rx="2" fill="none" stroke="#444" stroke-width="1"/>
+    <rect x="177" y="27" width="2" height="3" rx="0.5" fill="#444"/>
+    <rect x="162" y="25" width="14" height="7" rx="1" fill="#444"/>
 
-<!-- CARD 1 -->
-<rect x="16" y="130" width="328" height="190" rx="16" fill="#EFEFEF"/>
-<polygon points="340,143 342.6,150.4 350.5,150.6 344.3,155.4 346.5,162.9 340,158.5 333.5,162.9 335.7,155.4 329.5,150.6 337.4,150.4"
-  fill="none" stroke="#888" stroke-width="1.5" stroke-linejoin="round"/>
-<use href="#car" x="55" y="136" width="250" height="100"/>
-<text x="30" y="254" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Preço</text>
-<text x="108" y="254" font-size="13" fill="#1A1A1A" font-family="sans-serif">R$ 300.000,00</text>
-<text x="30" y="272" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Bateria</text>
-<text x="108" y="272" font-size="13" fill="#1A1A1A" font-family="sans-serif">300 kWh</text>
-<text x="30" y="290" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Potência</text>
-<text x="108" y="290" font-size="13" fill="#1A1A1A" font-family="sans-serif">200cv</text>
-<text x="30" y="308" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Recarga</text>
-<text x="108" y="308" font-size="13" fill="#1A1A1A" font-family="sans-serif">30 min</text>
+    <!-- APP BAR -->
+    <text x="20" y="59" font-family="sans-serif" font-size="15" font-weight="400" fill="#1A1A1A">Eletric Car</text>
 
-<!-- CARD 2 -->
-<rect x="16" y="332" width="328" height="190" rx="16" fill="#EFEFEF"/>
-<polygon points="340,345 342.6,352.4 350.5,352.6 344.3,357.4 346.5,364.9 340,360.5 333.5,364.9 335.7,357.4 329.5,352.6 337.4,352.4"
-  fill="none" stroke="#888" stroke-width="1.5" stroke-linejoin="round"/>
-<use href="#car" x="55" y="338" width="250" height="100"/>
-<text x="30" y="456" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Preço</text>
-<text x="108" y="456" font-size="13" fill="#1A1A1A" font-family="sans-serif">R$ 200.000,00</text>
-<text x="30" y="474" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Bateria</text>
-<text x="108" y="474" font-size="13" fill="#1A1A1A" font-family="sans-serif">230 kWh</text>
-<text x="30" y="492" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Potência</text>
-<text x="108" y="492" font-size="13" fill="#1A1A1A" font-family="sans-serif">100cv</text>
-<text x="30" y="510" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Recarga</text>
-<text x="108" y="510" font-size="13" fill="#1A1A1A" font-family="sans-serif">20 min</text>
+    <!-- TAB BAR -->
+    <text x="60" y="78" font-family="sans-serif" font-size="9" font-weight="700" fill="#00796B" text-anchor="middle" letter-spacing="1">CARROS</text>
+    <rect x="18" y="81" width="84" height="2" rx="1" fill="#00796B"/>
+    <text x="148" y="78" font-family="sans-serif" font-size="9" font-weight="700" fill="#AAAAAA" text-anchor="middle" letter-spacing="1">FAVORITOS</text>
+    <line x1="10" y1="84" x2="190" y2="84" stroke="#E0E0E0" stroke-width="0.7"/>
 
-<!-- CARD 3 (partial) -->
-<rect x="16" y="534" width="328" height="190" rx="16" fill="#EFEFEF"/>
-<polygon points="340,547 342.6,554.4 350.5,554.6 344.3,559.4 346.5,566.9 340,562.5 333.5,566.9 335.7,559.4 329.5,554.6 337.4,554.4"
-  fill="none" stroke="#888" stroke-width="1.5" stroke-linejoin="round"/>
-<use href="#car" x="55" y="540" width="250" height="100"/>
-<text x="30" y="658" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Preço</text>
-<text x="108" y="658" font-size="13" fill="#1A1A1A" font-family="sans-serif">R$ 554.000,00</text>
-<text x="30" y="676" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Bateria</text>
-<text x="108" y="676" font-size="13" fill="#1A1A1A" font-family="sans-serif">430 kWh</text>
-<text x="30" y="694" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Potência</text>
-<text x="108" y="694" font-size="13" fill="#1A1A1A" font-family="sans-serif">400cv</text>
-<text x="30" y="712" font-size="13" font-weight="700" fill="#1A1A1A" font-family="sans-serif">Recarga</text>
-<text x="108" y="712" font-size="13" fill="#1A1A1A" font-family="sans-serif">60 min</text>
+    <!-- CARD 1 -->
+    <rect x="18" y="90" width="164" height="110" rx="10" fill="#ECECEC"/>
+    <use href="#car" x="31" y="95" width="120" height="50"/>
+    <text x="175" y="106" font-family="sans-serif" font-size="13" fill="#888" text-anchor="middle">☆</text>
+    <text x="26" y="158" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#1A1A1A">Preço</text>
+    <text x="66" y="158" font-family="sans-serif" font-size="8.5" fill="#1A1A1A">R$ 300.000,00</text>
+    <text x="26" y="169" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#1A1A1A">Bateria</text>
+    <text x="66" y="169" font-family="sans-serif" font-size="8.5" fill="#1A1A1A">300 kWh</text>
+    <text x="26" y="180" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#1A1A1A">Potência</text>
+    <text x="66" y="180" font-family="sans-serif" font-size="8.5" fill="#1A1A1A">200cv</text>
+    <text x="26" y="191" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#1A1A1A">Recarga</text>
+    <text x="66" y="191" font-family="sans-serif" font-size="8.5" fill="#1A1A1A">30 min</text>
 
-<!-- FAB -->
-<circle cx="318" cy="668" r="26" fill="#00897B"/>
-<rect x="306" y="657" width="24" height="22" rx="3" fill="none" stroke="white" stroke-width="1.8"/>
-<rect x="309" y="660" width="7" height="4.5" rx="1" fill="white"/>
-<circle cx="321" cy="662.5" r="2" fill="white"/>
-<rect x="309" y="669" width="4" height="4" rx="1" fill="white"/>
-<rect x="315.5" y="669" width="4" height="4" rx="1" fill="white"/>
-<rect x="322" y="669" width="4" height="4" rx="1" fill="white"/>
-<rect x="309" y="676" width="4" height="4" rx="1" fill="white"/>
-<rect x="315.5" y="676" width="4" height="4" rx="1" fill="white"/>
-<rect x="322" y="676" width="4" height="4" rx="1" fill="white"/>
+    <!-- CARD 2 -->
+    <rect x="18" y="206" width="164" height="110" rx="10" fill="#ECECEC"/>
+    <use href="#car" x="31" y="211" width="120" height="50"/>
+    <text x="175" y="222" font-family="sans-serif" font-size="13" fill="#888" text-anchor="middle">☆</text>
+    <text x="26" y="274" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#1A1A1A">Preço</text>
+    <text x="66" y="274" font-family="sans-serif" font-size="8.5" fill="#1A1A1A">R$ 200.000,00</text>
+    <text x="26" y="285" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#1A1A1A">Bateria</text>
+    <text x="66" y="285" font-family="sans-serif" font-size="8.5" fill="#1A1A1A">230 kWh</text>
+    <text x="26" y="296" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#1A1A1A">Potência</text>
+    <text x="66" y="296" font-family="sans-serif" font-size="8.5" fill="#1A1A1A">100cv</text>
+    <text x="26" y="307" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#1A1A1A">Recarga</text>
+    <text x="66" y="307" font-family="sans-serif" font-size="8.5" fill="#1A1A1A">20 min</text>
 
-<!-- BOTTOM NAV -->
-<rect y="700" width="360" height="20" fill="#FFF"/>
-<polygon points="76,714 86,707 86,721" fill="#777"/>
-<circle cx="180" cy="714" r="7" fill="none" stroke="#777" stroke-width="2"/>
-<rect x="265" y="707" width="14" height="14" rx="2" fill="none" stroke="#777" stroke-width="2"/>
+    <!-- CARD 3 (partial) -->
+    <rect x="18" y="322" width="164" height="110" rx="10" fill="#ECECEC"/>
+    <use href="#car" x="31" y="327" width="120" height="50"/>
+    <text x="175" y="338" font-family="sans-serif" font-size="13" fill="#888" text-anchor="middle">☆</text>
+    <text x="26" y="390" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#1A1A1A">Preço</text>
+    <text x="66" y="390" font-family="sans-serif" font-size="8.5" fill="#1A1A1A">R$ 554.000,00</text>
+    <text x="26" y="401" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#1A1A1A">Bateria</text>
+    <text x="66" y="401" font-family="sans-serif" font-size="8.5" fill="#1A1A1A">430 kWh</text>
+    <text x="26" y="412" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#1A1A1A">Potência</text>
+    <text x="66" y="412" font-family="sans-serif" font-size="8.5" fill="#1A1A1A">400cv</text>
+
+    <!-- FAB -->
+    <circle cx="178" cy="385" r="18" fill="#00897B"/>
+    <rect x="170" y="378" width="16" height="14" rx="2" fill="none" stroke="white" stroke-width="1.5"/>
+    <rect x="172" y="380.5" width="5" height="3" rx="0.8" fill="white"/>
+    <circle cx="182" cy="382" r="1.3" fill="white"/>
+    <rect x="172" y="386" width="3" height="3" rx="0.7" fill="white"/>
+    <rect x="176.5" y="386" width="3" height="3" rx="0.7" fill="white"/>
+    <rect x="181" y="386" width="3" height="3" rx="0.7" fill="white"/>
+
+    <!-- Bottom home bar -->
+    <rect x="76" y="413" width="48" height="3.5" rx="2" fill="rgba(0,0,0,0.2)"/>
+  </g>
 </svg>
