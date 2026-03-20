@@ -9,6 +9,14 @@
 
 ---
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="screenshots/app_screenshot.png" alt="Electric Car App - Lista de Carros" width="300"/>
+</p>
+
+---
+
 ## 📱 Features
 
 - ✅ Browse a curated list of electric vehicles
